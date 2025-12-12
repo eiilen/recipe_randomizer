@@ -17,7 +17,8 @@ const Navbar = () => {
   }, [darkMode]);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setTimeout(() => setDarkMode(!darkMode), 300);
+    // setDarkMode(!darkMode);
   }
 
   useEffect(() => {
@@ -56,7 +57,7 @@ const Navbar = () => {
           </div>
         </a> */}
         <div>
-          <i onClick={toggleDarkMode} className={`fa-regular fa-${darkMode ? "sun" : "moon"} fa-xl hover:cursor-pointer duration-200 hover:scale-110 active:scale-75`}></i>
+          <i onClick={toggleDarkMode} className={`fa-regular fa-${darkMode ? "sun" : "moon"} fa-xl hover:cursor-pointer duration-200 hover:scale-110 hover:-rotate-20 rotate-0 active:scale-75`}></i>
         </div>
       </div>
     </header>
