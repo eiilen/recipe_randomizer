@@ -21,8 +21,8 @@ export const recipes = [
         },
     },
     {
-        name: "Xie Lian Cooking",
-        image: "src/assets/images/xie_lian_6.png",
+        name: "ឆាស្ពៃ",
+        image: "src/assets/images/xie_lian_9.png",
         description: "A delicious dish inspired by the character Xie Lian from the novel 'Tian Guan Ci Fu'.",
         ingredients: [  ],
         instructions: [  ],
@@ -40,8 +40,8 @@ export const recipes = [
         },
     },
     {
-        name: "Xie Lian Cooking",
-        image: "src/assets/images/xie_lian_5.png",
+        name: "ស្ងោរចាប់ឆាយ",
+        image: "src/assets/images/xie_lian_1.png",
         description: "A delicious dish inspired by the character Xie Lian from the novel 'Tian Guan Ci Fu'.",
         ingredients: [  ],
         instructions: [  ],
@@ -59,8 +59,8 @@ export const recipes = [
         },
     },
     {
-        name: "Xie Lian Cooking",
-        image: "src/assets/images/xie_lian_4.png",
+        name: "ស៊ុបក្តាម",
+        image: "src/assets/images/xie_lian_8.png",
         description: "A delicious dish inspired by the character Xie Lian from the novel 'Tian Guan Ci Fu'.",
         ingredients: [  ],
         instructions: [  ],

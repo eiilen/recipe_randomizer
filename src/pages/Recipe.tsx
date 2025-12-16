@@ -1,18 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { recipes } from '../constants'
 import { loadingService } from '../hooks/useLoading'
 import { useNavigate } from 'react-router-dom'
 
 const Recipe = () => {
-  const [recipe, setRecipe] = useState<typeof recipes[0] | null>(recipes[0]);
+  const [recipe, setRecipe] = useState<typeof recipes[0] | null>(() => {
+    const saved = localStorage.getItem('currentRecipe');
+    return saved ? JSON.parse(saved) : recipes[0];
+  });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (recipe) localStorage.setItem('currentRecipe', JSON.stringify(recipe));
+  }, [recipe]);
 
   const backHome = () => {
       loadingService.show()
       navigate('/');
       setTimeout(() => {
         loadingService.hide()
-      }, 500)
+      }, 1000)
     };
     
     
@@ -21,7 +28,7 @@ const Recipe = () => {
     const randomIndex = Math.floor(Math.random() * recipes.length);
     setTimeout(() => {
       loadingService.hide()
-    }, 500)
+    }, 1000)
     setRecipe(recipes[randomIndex]);
   };
   return (
@@ -48,7 +55,7 @@ const Recipe = () => {
         </button>
         <button className="px-6 py-2 bg-red-800 text-white rounded border border-red-800 dark:border-0 hover:bg-white hover:text-red-800 transition"
           onClick={getRandomRecipe}>
-          get recipe
+          try again
         </button>
       </div>
     </div>

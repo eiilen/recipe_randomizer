@@ -4,17 +4,18 @@ import useSound from 'use-sound';
 
 import boopSfx from '../assets/sounds/boop.mp3';
 import chimeSfx from '../assets/sounds/chime2.mp3';
+import twinkleSfx from '../assets/sounds/twinkle.mp3';
 import { toggleMute, useMute } from '../hooks/useMute';
 
 const Navbar = () => {
   // track if the user has scrolled down the page
   const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-  // const [mute, setMute] = useState(false);
   const mute = useMute();
   
   const [play] = useSound(boopSfx, {volume: 0.4});
   const [chime] = useSound(chimeSfx, {volume: 0.4});
+  const [twinkle] = useSound(twinkleSfx, {volume: 0.2});
 
   useEffect(() => {
     if (darkMode) {
@@ -60,6 +61,11 @@ const Navbar = () => {
   const handleClick = () => {
     navigate('/');
   };
+  const handleHover = () => {
+    if (!mute) {
+      twinkle();
+    }
+  }
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}
