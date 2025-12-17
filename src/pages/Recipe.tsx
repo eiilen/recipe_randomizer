@@ -23,13 +23,20 @@ const Recipe = () => {
     }; 
     
   const getRandomRecipe = () => {
-    loadingService.show()
-    const randomIndex = Math.floor(Math.random() * recipes.length);
+  loadingService.show();
+
+  const randomIndex = Math.floor(Math.random() * recipes.length);
+  const newRecipe = { ...recipes[randomIndex] };
+
+  const img = new Image();
+  img.src = newRecipe.image;
+  img.onload = () => {
+    setRecipe(newRecipe);
     setTimeout(() => {
       loadingService.hide()
     }, 1000)
-    setRecipe(recipes[randomIndex]);
   };
+};
   return (
     <div className='min-h-screen contain-wrapper flex flex-col justify-center'
       style={{["--viewport-padding" as any]: "clamp(1.25rem, 4vw, 5rem)",}}>
