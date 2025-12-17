@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { recipes } from '../constants'
 import { loadingService } from '../hooks/useLoading'
 import { useNavigate } from 'react-router-dom'

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { xl6 } from '../assets/images'
 import gsap from 'gsap';
 

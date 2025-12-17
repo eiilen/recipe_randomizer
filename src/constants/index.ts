@@ -1,3 +1,4 @@
+import { ost_1 } from "../assets/audios"
 import { hc1, hc3, hc5, hc6, hc8, xl1, xl3, xl5, xl7, xl8, xl9 } from "../assets/images"
 
 export const recipes = [
@@ -227,7 +228,7 @@ export const playlists = [
     {
         id: 1,
         name: "Xie Lian Playlist",
-        src: "src/assets/audios/一花一剑 - 《天官赐福》动画插曲 - 李鑫一.mp3",
+        src: ost_1,
 
     }
 ]

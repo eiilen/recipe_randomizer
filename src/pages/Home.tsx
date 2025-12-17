@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { xl4 } from '../assets/images'
 import { useNavigate } from 'react-router-dom';
 import { loadingService } from '../hooks/useLoading'
@@ -60,7 +60,6 @@ const Home = () => {
         </button>
       </div>
     </div>
-
     </>
   )
 }
